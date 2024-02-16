@@ -1,0 +1,37 @@
+<div class="parentDiv">
+    <div class="loginForm">
+      <div class="logo">
+        <h3>PMSP projects</h3>
+      </div>
+      <form [formGroup]="loginForm" (ngSubmit)="authenticate()" class="login">
+        <h3>Sign in</h3>
+        <div class="uName">
+          <div class="errorDiv" *ngIf="loginForm.get('Username')?.invalid && loginForm.get('Username')?.touched">Field is required</div>
+          <label for="userName">Email</label>
+          <br>
+          <input type="email" name="Username" id="userName" placeholder="Enter Your email" formControlName="Username">
+          <br>
+        </div>
+        <div class="pd">
+          <div class="errorDiv" *ngIf="loginForm.get('Password')?.invalid && loginForm.get('Password')?.touched">Field is required</div>
+          <label for="loginPwd">Password</label>
+          <br>
+          <input type="password" name="Password" id="loginPwd" placeholder="Password" formControlName="Password">
+          <br>
+          <a id="forgot">Forgot password?</a>
+          <br>
+        </div>
+        <div class="loginBtn">
+          <input type="submit" value="Login" id="signIn">
+          <br>
+          <a routerLink="''">Don't have an account? <span id="registerLink">Register</span></a>
+        </div>
+      </form>
+    </div>
+    <div class="welcome">
+      <img src="../../assets/Project Manager.webp" alt="">
+    </div>
+  </div>
+  
+  <router-outlet></router-outlet>
+  
